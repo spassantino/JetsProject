@@ -11,7 +11,9 @@ public class Jet implements Comparable<Jet>  {
 	private float mph;
 	private long price;
 	private static int range;
-	private float ma=0;
+	private float ma;
+	ArrayList<Jet> fleet = new ArrayList<Jet>();
+
 	// constructors
 	public Jet() {
 
