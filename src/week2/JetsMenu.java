@@ -96,6 +96,7 @@ public class JetsMenu {
 		System.out.println("Please enter the speed (in MPH) of jet to add: ");
 		float mph = scanner.nextFloat();
 		newJet.setMph(mph);
+		newJet.convertToMach(mph);
 		System.out.println("Please enter the price of jet to add: ");
 		long price = scanner.nextLong();
 		newJet.setPrice(price);
