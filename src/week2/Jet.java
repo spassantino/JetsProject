@@ -2,9 +2,10 @@ package week2;
 import java.util.List;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.Scanner;
 
-public class Jet implements Comparable<Jet>  {
+public class Jet implements Comparator<Jet>  {
 	// attributes
 	private String model;
 	private float mph;
@@ -52,7 +53,7 @@ public class Jet implements Comparable<Jet>  {
 		this.price = price;
 	}
 
-	public int getRange() {
+	public Integer getRange() {
 		return range;
 	}
 
@@ -63,17 +64,17 @@ public class Jet implements Comparable<Jet>  {
 	public static float convertToMach(float mph) {
 		float ma = mph / 760.5583392985f;
 		return ma;
-	}
-    @Override
-    public int compareTo(Jet range) {
-		return 0;
-         
-
-    }
+    	}  
 
 	//toString
 	@Override
 	public String toString() {
 		return "Jet [model=" + model + ", mph=" + mph + ", price=" + price + ", range=" + range + ", ma=" + ma + "]";
+	}
+
+	@Override
+	public int compare(Jet o1, Jet o2) {
+		// TODO Auto-generated method stub
+		return 0;
 	}
 }
