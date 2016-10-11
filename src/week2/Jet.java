@@ -1,22 +1,22 @@
 package week2;
-
+import java.util.List;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Scanner;
-import java.util.List;
 
 public class Jet implements Comparable<Jet>  {
 	// attributes
 	private String model;
 	private float mph;
 	private long price;
-	private static int range;
+	private int range;
 	private float ma;
 	ArrayList<Jet> fleet = new ArrayList<Jet>();
 
+
 	// constructors
 	public Jet() {
-
+		
 	}
 
 	public Jet(String model, float mph, long price, int range) {
@@ -24,14 +24,7 @@ public class Jet implements Comparable<Jet>  {
 		this.mph = mph;
 		this.price = price;
 		this.range = range;
-	}
-
-	public Jet(String model, float mph, long price, int range, float ma) {
-		this.model = model;
-		this.mph = mph;
-		this.price = price;
-		this.range = range;
-		ma = mph * 760.5583392985f;
+		this.ma=convertToMach(mph);
 
 	}
 	//getters and setters
@@ -59,7 +52,7 @@ public class Jet implements Comparable<Jet>  {
 		this.price = price;
 	}
 
-	public static int getRange() {
+	public int getRange() {
 		return range;
 	}
 
@@ -67,12 +60,12 @@ public class Jet implements Comparable<Jet>  {
 		this.range = range;
 	}
 
-	public void convertToMach(float mph) {
-		float ma = this.mph * 760.5583392985f;
-		
+	public static float convertToMach(float mph) {
+		float ma = mph / 760.5583392985f;
+		return ma;
 	}
     @Override
-    public int compareTo(Jet o) {
+    public int compareTo(Jet range) {
 		return 0;
          
 
