@@ -5,7 +5,7 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.Scanner;
 
-public class Jet implements Comparator<Jet>  {
+public class Jet{
 	// attributes
 	private String model;
 	private float mph;
@@ -69,12 +69,7 @@ public class Jet implements Comparator<Jet>  {
 	//toString
 	@Override
 	public String toString() {
-		return "Jet [model=" + model + ", mph=" + mph + ", price=" + price + ", range=" + range + ", ma=" + ma + "]";
+		return "Jet [model=" + model + ", mph=" + mph + ", price=" + price + ", range=" + range + ", ma=" + convertToMach(mph) + "]";
 	}
 
-	@Override
-	public int compare(Jet o1, Jet o2) {
-		// TODO Auto-generated method stub
-		return 0;
-	}
 }
