@@ -67,25 +67,25 @@ public class JetsMenu {
 
 	public static void findFastestJet() {
 
-			
-		System.out.println("The fastest Jet is: ");
+
+		System.out.println("sorting by speed...");  
+		for (int i = fleet.size()-1; i< fleet.size(); i++){
+		
+		System.out.println(fleet.get(i));
+
 		displayMenu();
 	}
-	
+	}
 	public static void findLongestRangeJet() {
 		// ArrayList<Jet> minRange=new ArrayList<Jet>();
 		//
-		// for(Jet x:fleet){
-		// if(minRange.size()==0||x.getRange()==minRange.get(0).getRange())
-		// minRange.add(x);
-		// else if(x.getRange()<minRange.get(0).getRange()){
-		// minRange.clear();
-		// minRange.add(x);
-		// }
 
-		System.out.println("The longest range Jet is: ");
-		// return ;
+		System.out.println("sorting by range...");  
+		for (int i = fleet.size()-1; i< fleet.size(); i++){
+		
+		System.out.println(fleet.get(i));
 		displayMenu();
+		}
 	}
 
 	public static void addJet() {
