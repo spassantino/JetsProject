@@ -67,26 +67,30 @@ public class JetsMenu {
 
 	public static void findFastestJet() {
 
+		double max = 0;
 
-		System.out.println("sorting by speed...");  
-		for (int i = fleet.size()-1; i< fleet.size(); i++){
-		
-		System.out.println(fleet.get(i));
-
-		displayMenu();
-	}
-	}
-	public static void findLongestRangeJet() {
-		// ArrayList<Jet> minRange=new ArrayList<Jet>();
-		//
-
-		System.out.println("sorting by range...");  
-		for (int i = fleet.size()-1; i< fleet.size(); i++){
-		
-		System.out.println(fleet.get(i));
-		displayMenu();
+		for (int i = 0; i < fleet.size(); i++) {
+			Jet j = (Jet) fleet.get(i);
+			if (j.getMph() > max)
+				max = j.getMph();
 		}
-	}
+			System.out.println("The Fastest Jet is " + max);
+			displayMenu();
+		}
+	
+
+	public static void findLongestRangeJet() {
+		double max = 0;
+
+		for (int i = 0; i < fleet.size(); i++) {
+			Jet j = (Jet) fleet.get(i);
+			if (j.getRange() > max)
+				max = j.getRange();
+		}
+			System.out.println("The Jet With Max Range Value is " + max);
+			displayMenu();
+		}
+	
 
 	public static void addJet() {
 		Jet newJet = new Jet();
@@ -96,7 +100,6 @@ public class JetsMenu {
 		System.out.println("Please enter the speed (in MPH) of jet to add: ");
 		float mph = scanner.nextFloat();
 		newJet.setMph(mph);
-		newJet.convertToMach(mph);
 		System.out.println("Please enter the price of jet to add: ");
 		long price = scanner.nextLong();
 		newJet.setPrice(price);
