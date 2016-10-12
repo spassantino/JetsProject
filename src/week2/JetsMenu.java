@@ -3,6 +3,8 @@ package week2;
 import java.lang.System;
 import java.util.*;
 
+import javax.swing.plaf.synth.SynthScrollBarUI;
+
 public class JetsMenu {
 	static ArrayList<Jet> fleet = new ArrayList<Jet>();
 
@@ -66,31 +68,39 @@ public class JetsMenu {
 	}
 
 	public static void findFastestJet() {
-
+		Jet fastest = null;
 		double max = 0;
 
 		for (int i = 0; i < fleet.size(); i++) {
-			Jet j = (Jet) fleet.get(i);
-			if (j.getMph() > max)
+			Jet j = new Jet();
+			j = (Jet) fleet.get(i);
+			if (j.getMph() > max){
 				max = j.getMph();
+				fastest = j;
+			}
+			System.out.println(j.toString());
 		}
-			System.out.println("The Fastest Jet is " + max);
-			displayMenu();
-		}
-	
+		
+		System.out.println("The Fastest Jet is " + fastest);
+		displayMenu();
+	}
 
 	public static void findLongestRangeJet() {
 		double max = 0;
-
+		Jet longest = null;
 		for (int i = 0; i < fleet.size(); i++) {
-			Jet j = (Jet) fleet.get(i);
-			if (j.getRange() > max)
+			Jet j = new Jet();
+			j = (Jet) fleet.get(i);
+			if (j.getRange() > max){
 				max = j.getRange();
+				longest = j;
+			}
+			System.out.println(j.toString());
+
 		}
-			System.out.println("The Jet With Max Range Value is " + max);
-			displayMenu();
-		}
-	
+		System.out.println("The Jet With Max Range Value is " + longest);
+		displayMenu();
+	}
 
 	public static void addJet() {
 		Jet newJet = new Jet();
